@@ -52,7 +52,7 @@ while read -r line
 do
 	a=$(echo $line | cut -d"$char" -f$index)
 	b=$(echo $line | cut -d"$char" -f$value)
-	if [[ $biggest < $b ]]
+	if (( $biggest < $b ))
 	then
 		biggest=$b
 	fi
@@ -61,12 +61,15 @@ do
 done 
 
 # decide scale
-# if (( b))
+if (( biggest - 20 >= width ));
+then
+	scale=$(bc -l <<< "(${width}-20)/$biggest" )
+fi
 
-for i in $(seq 0 1 $((${#idata[@]} - 1)))
+for i in $(seq 0 1 $(( ${#idata[@]} - 1 )))
 do
-	echo -n "${idata[$i]}	"
-	for j in $(seq 1 1 ${vdata[$i]})
+	echo -n "${idata[$i]}: "
+	for j in $(seq 1 1 $(bc -l <<< "${vdata[$i]}*${scale}"))
 	do 
 		echo -n "#"
 	done
