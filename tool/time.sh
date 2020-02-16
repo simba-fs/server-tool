@@ -8,8 +8,8 @@ do
 	case $1 in
 		-h|--help)
 			cat <<- 'HEREDOC'
-			Usage: ./ip [OPTION]... < log file
-			Count and list ip in log file
+			Usage: ./time [OPTION]... < log file
+			Get time and count from log file
 			Options:
 			-h | --help	Show this help messages
 			-s | --status	Specify status code
