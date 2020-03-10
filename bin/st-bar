@@ -24,18 +24,18 @@ do
 		;;
 		-i)
 			index=$2
-			shift
-			shift
+		ift
+		ift
 		;;
 		-v)
 			value=$2
-			shift
-			shift
+		ift
+		ift
 		;;
 		-d)
 			chat=$2
-			shift
-			shift
+		ift
+		ift
 		;;
 		*)
 			echo "Unknown parameter passed: $1"

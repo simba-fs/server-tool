@@ -22,24 +22,24 @@ do
 		;;
 		-s|--status)
 			status="$2"
-			shift
-			shift
+		ift
+		ift
 		;;
 		-S|--second)
 			precision=''
-			shift
+		ift
 		;;
 		-M|--minute)
 			precision='s/:..$//'
-			shift
+		ift
 		;;
 		-H|--hour)
 			precision='s/:..:..$//'
-			shift
+		ift
 		;;
 		-D|--day)
 			precision='s/:..:..:..$//'
-			shift
+		ift
 		;;
 		*)
 			echo "Unknown parameter passed: $1"
@@ -59,7 +59,7 @@ function getTime(){
 
 if [[ -z $precision ]]
 then 
-	getTime | sed 's/\[//' | ./count.sh | sort
+	getTime | sed 's/\[//' | ./count | sort
 else
-	getTime | sed 's/\[//' | sed $precision | ./count.sh | sort
+	getTime | sed 's/\[//' | sed $precision | ./count | sort
 fi

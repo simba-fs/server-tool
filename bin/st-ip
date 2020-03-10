@@ -20,16 +20,16 @@ do
 		;;
 		-s|--status)
 			status="$2"
-			shift
-			shift
+		ift
+		ift
 		;;
 		-S|--sort)
 			sort="y"
-			shift
+		ift
 		;;
 		-r|--reverse)
 			sort="r"
-			shift
+		ift
 		;;
 		*)
 			echo "Unknown parameter passed: $1"
@@ -41,9 +41,9 @@ done
 function getip(){
 	if [[ -z $status ]]
 	then
-		cut -d' ' -f1 | ./count.sh
+		cut -d' ' -f1 | ./count
 	else
-		awk "\$9 == $status {print \$1}" | ./count.sh
+		awk "\$9 == $status {print \$1}" | ./count
 	fi
 }
 if [[ $sort == "n" ]]
